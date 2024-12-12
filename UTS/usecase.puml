@@ -1,0 +1,18 @@
+@startuml usecase  
+actor Pembeli
+actor Sales
+actor "Distributor/Admin" as Admin
+
+usecase "Melihat Daftar Kendaraan" as UC1
+usecase "Melakukan Pembelian Kendaraan" as UC2
+usecase "Memperbarui Data Kendaraan" as UC3
+usecase "Menambah Stok Kendaraan" as UC4
+usecase "Mencetak Faktur" as UC5
+
+Pembeli --> UC1
+Pembeli --> UC2
+Sales --> UC1
+Sales --> UC5
+Admin --> UC3
+Admin --> UC4
+@enduml

@@ -1,0 +1,17 @@
+@startuml flowchart
+start
+:Input data kendaraan baru;
+if (Apakah data valid?) then (Yes)
+    :Simpan ke database;
+    if (Apakah kendaraan tersedia?) then (Yes)
+        :Proses penjualan kendaraan;
+        :Kurangi stok kendaraan;
+        :Cetak faktur untuk pembeli;
+    else (No)
+        :Pemberitahuan kendaraan tidak tersedia;
+    endif
+else (No)
+    :Perbaiki data kendaraan;
+endif
+stop
+@enduml

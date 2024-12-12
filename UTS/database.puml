@@ -1,0 +1,36 @@
+@startuml database 
+entity "Kendaraan" as kendaraan {
+    +ID_Kendaraan : int
+    Nama : string
+    Jenis : string
+    Harga : int
+    Stok : int
+}
+
+entity "Pembeli" as pembeli {
+    +ID_Pembeli : int
+    Nama : string
+    Alamat : string
+    Telepon : string
+}
+
+entity "Sales" as sales {
+    +ID_Sales : int
+    Nama : string
+    Email : string
+    Telepon : string
+}
+
+entity "Transaksi" as transaksi {
+    +ID_Transaksi : int
+    ID_Pembeli : int
+    ID_Sales : int
+    ID_Kendaraan : int
+    Tanggal : date
+    Total_Harga : int
+}
+
+kendaraan ||--o{ transaksi : "dijual"
+pembeli ||--o{ transaksi : "melakukan"
+sales ||--o{ transaksi : "mengelola"
+@enduml
